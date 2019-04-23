@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+
+    <package name="province" extends="struts-default" namespace="/province">
+
+        <!--查询所有省份信息-->
+        <action name="findAll" class="com.baizhi.action.ProvinceAction" method="findAll"/>
+
+
+        <!--根据省份编号查询省份下的所有城市-->
+        <action name="findCityByProvinceCode" class="com.baizhi.action.CityAction" method="findCityByProvinceCode"/>
+
+        <!--根据城市编号查询当前城市下的地区-->
+        <action name="findByCityCode" class="com.baizhi.action.AreaAction" method="findByCityCode"/>
+
+
+    </package>
+
+
+    <package name="user" extends="struts-default" namespace="/user">
+
+
+        <action name="login" class="com.baizhi.action.UserAction" method="login"/>
+
+
+        <action name="findAll"  class="com.baizhi.action.MessageAction" method="findAll"/>
+
+        <action name="save" class="com.baizhi.action.MessageAction" method="save"/>
+    </package>
+
+
+</struts>
